@@ -12,12 +12,6 @@ jobs:
 
     steps:
       - name: Download Artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: build-artifact
-          path: deployment/
-
-      - name: Deploy the Application
         run: |
-          echo "Deploying the application..."
-          cat deployment/artifact.txt
+          BUILD_VERSION=$(gh variable get BUILD_VERSION --json value -q '.value')
+          echo "BUILD_VERSION=$BUILD_VERSION" >> $GITHUB_ENV
