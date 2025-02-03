@@ -3,7 +3,7 @@ name: Build
 on:
   push:
     branches:
-      - dev  # Runs on push to dev branch
+      - main  # Runs on push to dev branch
 
 jobs:
   build:
